@@ -1,5 +1,6 @@
 *{
 	font-family:Arial,Verdana,Helvetica ;
+	
 }
 header {
 	background-image: url('../mh3.jpg');
@@ -41,37 +42,46 @@ a:visited{
   		text-align: center;
   		padding: 14px 16px;
 }
-.sideNav ul{
-	list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 300%;
-  background-color: forestgreen;
-  height: auto; /* Full height */
-  
-  overflow: auto; /* Enable scrolling if the sidenav has too much content */	
+.wrapper{
+	display:flex;
+	position: relative;
 }
-.sideNav li a {
+.wrapper .sideNav {
+	position: fixed;
+	width:200px;
+	height: auto;
+	background-color: forestgreen;
+	padding: 5px;
+	overflow: auto;
+}
+.wrapper .sideNav li{
+	list-style-type:none;
+	padding:0;
+}
+.wrapper .sideNav ul li{
+	padding:5px;
+	border-bottom:1px solid rgba(0,0,0,0.05);
+	border-top:1px solid rgba(225,225,225,0.05); 
+}
+.wrapper .sideNav ul li a{
 	display: block;
   	padding: 8px 16px;
   	text-decoration: none;
 }
-.wrapper{
-	display:flex;
-	position:relative;
+.wrapper .sideNav ul li a .fa{
+	width: 25px;
 }
-.text{
+.wrapper .text{
 	display:flex;
 	position: relative;
 	justify-content:space-between;
 	align-items:center;
-}
-.text
-{
 	margin-left:15%;padding:1px 16px;height:500px; 
-	margin-top: 20px;	
+	margin-top: 20px;
 }
-
 footer{
-	background-color: grey;
+	background-color: ghostwhite;
+	text-align: center;
+
+
 }
