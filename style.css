@@ -1,5 +1,5 @@
 *{
-	font-family:Arial,Verdana,Helvetica ;
+	font-family:New Times Roman;
 	
 }
 header {
@@ -79,9 +79,16 @@ a:visited{
 	margin-left:15%;padding:1px 16px;height:500px; 
 	margin-top: 20px;
 }
+section{
+	display:block;
+	position: relative;
+	justify-content:space-between;
+	align-items: center;
+	margin-left:5%;padding:1px 16px;height:500px; 
+	margin-top: 20px;
+	
+}
 footer{
 	background-color: ghostwhite;
 	text-align: center;
-
-
 }
