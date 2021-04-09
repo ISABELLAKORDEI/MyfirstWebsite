@@ -1,9 +1,30 @@
 <?php
-  session_start();
+$dbServername="localhost";
+$dbUsername="root";
+$dbPassword="";
+$dbName="registration"; 
 
-    include("connection.php");
-    
-    if($_SERVER['REQUEST_METHOD']=="POST")
+    $conn =mysql_connect('localhost','root','');
+    $db = mysql_select_db('registration');
+
+    if($conn)
+    {
+        echo "Successfully Connected to the database";
+    }
+    else
+    {
+        die('Error');
+    }
+  if($db)
+  {
+    echo'Successfully Found the database';
+  }  
+  else  
+  {
+    die('Error')
+  }
+
+  if(isset($_POST['add']))
     {
         //something was posted 
         $PatientID = $_POST['PatientID'];
@@ -14,10 +35,15 @@
         $dateofbirth = $_POST['dateofbirth'];
 
     //save to database 
-    $query ="insert into patient (Firstname,Lastname,Gender,County,DoB) values ('$Firstname','$Lastname','$Gender','$County','$DoB') ";
+    $sql_query ="INSERT INTO  patient (Firstname,Lastname,Gender,County,DoB) values ('$Firstname','$Lastname','$Gender','$County','$DoB') ";
 
-    mysqli_query($con, $query);
-        //header("location:index.html");
-        //die;
+    if (mysqli_query($conn ,sql_query))
+    {
+        echo "New Patient Registered Successfully!";
     }
-?>
+    else
+    {
+        echo "Error".$sql ."".mysqli_error($con);
+    }
+
+    mysqli_close($conn);
