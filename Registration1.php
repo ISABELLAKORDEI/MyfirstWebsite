@@ -9,7 +9,7 @@ $Name="Registration";
 
     if($conn)
     {
-        echo "Successfully Connected to the database";
+        echo "Successfully Connected to the MySQL";
     }
     else
     {
@@ -40,4 +40,5 @@ if(isset($_POST['add']))
 
     mysqli_close($conn);
 }
+?>
 ?>
