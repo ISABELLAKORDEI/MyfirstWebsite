@@ -5,22 +5,22 @@
     <link rel="stylesheet" type="text/css" href="css/styleSignup.css">    
 </head>    
 <body>    
-    <h2>Sign up Page</h2><br>    
+    <h2>Registration Page</h2><br>    
     <div class="Signup">    
-    <form id="Signup" method="get" action="Signup.php">    
+    <form id="Signup" method="POST" action="Registration.php"> 
+        <label><br>PatientID</label>
+        <input type="text" name="PatientID" id="Fname" placeholder="PatientID" >    
+        <br><br>
         <label><b>First Name     
         </b>    
         </label>    
-        <input type="text" name="Fname" id="Fname" placeholder="Firstname">    
+        <input type="text" name="Fname" id="Fname" placeholder="Firstname" required>    
         <br><br>
         <label><b>LastName     
         </b>    
         </label>    
-        <input type="text" name="Lname" id="Lname" placeholder="Lastname">    
+        <input type="text" name="Lname" id="Lname" placeholder="Lastname" required>    
         <br><br>     
-        <label><b>Email</b></label> 
-        <input type ="email" name="email">
-        <br><br>
         <label>Gender</label>
         <select>name="gender">
         <option value="male">Male</option>
