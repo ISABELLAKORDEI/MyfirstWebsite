@@ -1,40 +1,36 @@
 <?php
-    include_once 'Assignment/Registration1'
+ 
 ?>
-
 <!DOCTYPE html>    
 <html>    
 <head>    
-    <title>Sign up Form</title>    
+    <title>Registration Form</title>    
     <link rel="stylesheet" type="text/css" href="css/styleSignup.css">    
 </head>    
-<body>  
-      $conn;
+<body>    
     <h2>Registration Page</h2><br>    
     <div class="Signup">    
     <form id="Signup" method="POST" action="http://localhost/Assignment/Registration1.php"> 
         <label><br>PatientID</label>
-        <input type="text" name="PatientID" id="Fname" placeholder="PatientID" >    
+        <input type="text" name="PatientID" id="PatientID" placeholder="PatientID" >    
         <br><br>
-        <label><b>First Name     
-        </b>    
+        <label><b>First Name</b>    
         </label>    
         <input type="text" name="Fname" id="Fname" placeholder="Firstname" required>    
         <br><br>
-        <label><b>LastName     
-        </b>    
+        <label><b>LastName</b>    
         </label>    
         <input type="text" name="Lname" id="Lname" placeholder="Lastname" required>    
-        <br><br>     
-        <label>Gender</label>
-        <select>name="gender">
+        <br><br>    
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender">
         <option value="male">Male</option>
-        <option value="male">Female</option>
-        <option value="male">Other</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
         </select>
         <br></br>  
-        <label>County</label>
-        <select>name="county">
+        <label for= "county">County</label>
+        <select id ="county" name="county">
         <option value="Mombasa(001)">Mombasa(001)</option>
         <option value="Kwale(002)">Kwale(002)</option>
         <option value="Kilifi(003)">Kilifi(003)</option>
@@ -88,7 +84,7 @@
         <label for="dateofbirth">Date of Birth:</label>
         <input type="date" id="dateofbirth" name="dateofbirth">
         <br><br> 
-        <input type="submit" value="Submit">  
+        <input type="submit" name="submit" value="submit">   
     </form>     
 </div>    
 </body>    
