@@ -46,6 +46,7 @@ a:visited{
 	display:flex;
 	position: relative;
 }
+
 .wrapper .sideNav {
 	position: fixed;
 	width:200px;
