@@ -1,24 +1,6 @@
 <?php
-//database connection
-$Servername="localhost";
-$Username="root";
-$Password="";
-$Name="Registration"; 
 
-    $conn =mysqli_connect($Servername,$Username,$Password,$Name);
-
-    if($conn)
-    {
-        echo "Successfully Connected to the MySQL";
-    }
-    else
-    {
-        die('Error');
-    }
- 
-if(isset($_POST['add']))
-    {
-        //something was posted 
+    //something was posted 
         $PatientID = $_POST['PatientID'];
         $Fname = $_POST['Fname'];
         $Lname = $_POST['Lname'];
@@ -26,19 +8,19 @@ if(isset($_POST['add']))
         $county = $_POST['county'];
         $dateofbirth = $_POST['dateofbirth'];
 
+    $conn =mysqli_connect('localhost','root','','Registration');
+ 
     //save to database 
-    $sql_query =" INSERT  INTO  Patients (Firstname,Lastname,Gender,County,DoB) values ('$Firstname','$Lastname','$Gender','$County','$DoB') ";
+    $sql_query = " INSERT  INTO  Patients (PatientID,Firstname,Lastname,Gender,County,DoB) values ('','$Fname','$Lname','$gender','$county','$dateofbirth') ";
 
-    if (mysqli_query($conn ,$sql_query))
+    $run = mysqli_query($conn, $sql_query);
+    if($run == TRUE)
     {
-        echo "New Patient Registered Successfully!";
+        echo "Registration Successful";
     }
     else
     {
-        echo "Error:".$sql ."".mysqli_error($conn);
+        echo "Error";
     }
-
-    mysqli_close($conn);
-}
-?>
+ 
 ?>
